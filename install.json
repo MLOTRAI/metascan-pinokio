@@ -1,61 +1,63 @@
-module.exports = [
-  {
-    "method": "notify",
-    "params": {
-      "html": "Installing Metascan - AI Media Scanner & Upscaler<br><small>This will take a few minutes...</small>"
-    }
-  },
-  {
-    "method": "shell.run",
-    "params": {
-      "message": "git clone https://github.com/pakfur/metascan.git app",
-      "path": "."
-    }
-  },
-  {
-    "method": "fs.link",
-    "params": {
-      "drive": {
-        "checkpoints": "app",
-        "models": "app/models"
+{
+  "run": [
+    {
+      "method": "notify",
+      "params": {
+        "html": "Installing Metascan - AI Media Scanner & Upscaler<br><small>This will take a few minutes to download ~915MB of AI models...</small>"
+      }
+    },
+    {
+      "method": "shell.run",
+      "params": {
+        "message": "git clone https://github.com/pakfur/metascan.git app",
+        "path": "."
+      }
+    },
+    {
+      "method": "fs.link",
+      "params": {
+        "drive": {
+          "checkpoints": "app",
+          "models": "app/models"
+        }
+      }
+    },
+    {
+      "method": "shell.run",
+      "params": {
+        "message": "python -m venv env",
+        "path": "app"
+      }
+    },
+    {
+      "method": "shell.run",
+      "params": {
+        "message": "pip install --upgrade pip",
+        "path": "app",
+        "venv": "env"
+      }
+    },
+    {
+      "method": "shell.run",
+      "params": {
+        "message": "pip install -r requirements.txt",
+        "path": "app",
+        "venv": "env"
+      }
+    },
+    {
+      "method": "shell.run",
+      "params": {
+        "message": "python setup_models.py",
+        "path": "app",
+        "venv": "env"
+      }
+    },
+    {
+      "method": "notify",
+      "params": {
+        "html": "✅ <b>Metascan installed successfully!</b><br><br>📋 <b>Quick Start:</b><br>1. Click <b>'Start'</b> to launch Metascan<br>2. Click <b>'Config'</b> to add your AI image/video folders<br>3. Click <b>'Scan'</b> to index your media files<br><br>🚀 <b>Features:</b><br>• Browse AI-generated images/videos<br>• Extract metadata from ComfyUI, SwarmUI, Fooocus<br>• AI upscaling with Real-ESRGAN (2x/4x/8x)<br>• Smart filtering by prompts, models, LoRAs<br>• Favorites system and full-size viewer<br>• Video thumbnail generation with FFMPEG"
       }
     }
-  },
-  {
-    "method": "shell.run",
-    "params": {
-      "message": "python -m venv env",
-      "path": "app"
-    }
-  },
-  {
-    "method": "shell.run",
-    "params": {
-      "message": "pip install --upgrade pip",
-      "path": "app",
-      "venv": "env"
-    }
-  },
-  {
-    "method": "shell.run",
-    "params": {
-      "message": "pip install -r requirements.txt",
-      "path": "app",
-      "venv": "env"
-    }
-  },
-  {
-    "method": "shell.run",
-    "params": {
-      "message": "python setup_models.py",
-      "path": "app",
-      "venv": "env"
-    }
-  },
-  {
-    "method": "notify",
-    "params": {
-      "html": "✅ <b>Metascan installed successfully!</b><br><br>📋 <b>Quick Start:</b><br>1. Click <b>'Start'</b> to launch Metascan<br>2. Click <b>'Config'</b> to add your AI image/video folders<br>3. Click <b>'Scan'</b> to index your media files<br><br>🚀 <b>Features:</b><br>• Browse AI-generated images/videos<br>• Extract metadata from ComfyUI, SwarmUI, Fooocus<br>• AI upscaling with Real-ESRGAN (2x/4x/8x)<br>• Smart filtering by prompts, models, LoRAs<br>• Favorites system and full-size viewer<br>• Video thumbnail generation with FFMPEG"
-    }
-  }
-]
+  ]
+}
