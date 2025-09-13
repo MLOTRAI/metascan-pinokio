@@ -1,0 +1,26 @@
+module.exports = [
+  {
+    "method": "notify",
+    "params": {
+      "html": "⚠️ Resetting Metascan installation...<br><small>This will remove all files and settings</small>"
+    }
+  },
+  {
+    "method": "fs.remove",
+    "params": {
+      "path": "app"
+    }
+  },
+  {
+    "method": "fs.remove",
+    "params": {
+      "path": "tmp"
+    }
+  },
+  {
+    "method": "notify",
+    "params": {
+      "html": "✅ <b>Metascan reset complete!</b><br>Click 'Install' to reinstall from scratch."
+    }
+  }
+]
