@@ -6,19 +6,19 @@ module.exports = {
   "menu": [
     {
       "text": "Install",
-      "href": "install.js"
+      "href": "install.json"
     },
     {
       "text": "Start",
-      "href": "start.js"
+      "href": "start.json"
     },
     {
       "text": "Update", 
-      "href": "update.js"
+      "href": "update.json"
     },
     {
       "text": "Reset",
-      "href": "reset.js"
+      "href": "reset.json"
     }
   ]
 }
