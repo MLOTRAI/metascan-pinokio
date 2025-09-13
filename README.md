@@ -19,7 +19,7 @@ Metascan is a desktop application for browsing, organizing, and upscaling AI-gen
 ### Method 1: Direct Install (Recommended)
 1. Open Pinokio
 2. Go to the "Discover" tab
-3. Paste this URL: `https://github.com/YOUR_USERNAME/metascan-pinokio`
+3. Paste this URL: `https://github.com/MLOTRAI/metascan-pinokio`
 4. Click "Install"
 
 ### Method 2: Manual Install
